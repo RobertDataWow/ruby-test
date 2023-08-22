@@ -8,6 +8,7 @@ def solution(a, b, c)
     if (letter.nil?) || (new_word.length >= 2 && new_word[-1] == letter && new_word[-2] == letter)
       next_words = words_arr[1]
       return new_word if next_words.empty?
+
       new_word += next_words.pop
       next
     end
