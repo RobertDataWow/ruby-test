@@ -1,22 +1,17 @@
 def solution(a, b, c)
-  word_arr = [[*("a" * a).chars], [*("b" * b).chars], [*("c" * c).chars]]
-  new_word = ""
-  word_arr = word_arr.sort_by { |x| -x.length }
+  words_arr = [[*('a' * a).chars], [*('b' * b).chars], [*('c' * c).chars]]
+  new_word = ''
+  words_arr = words_arr.sort_by { |x| -x.length }
   while true
-    words = word_arr.first
+    words = words_arr.first
     letter = words.last
     if (letter.nil?) || (new_word.length >= 2 && new_word[-1] == letter && new_word[-2] == letter)
-      next_words = word_arr[1]
-      if next_words.empty?
-        return new_word
-      end
+      next_words = words_arr[1]
+      return new_word if next_words.empty?
       new_word += next_words.pop
       next
     end
     new_word += words.pop
-    word_arr = word_arr.sort_by { |x| -x.length }
+    words_arr = words_arr.sort_by { |x| -x.length }
   end
 end
-
-# Test
-puts solution(5, 1, 8)
