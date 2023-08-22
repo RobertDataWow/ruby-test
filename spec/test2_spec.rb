@@ -2,14 +2,6 @@
 require_relative '../test2' # Assuming your solution is in a file named solution.rb
 
 RSpec.describe 'solution' do
-  class Tree
-    attr_reader :v, :l, :r
-
-    def initialize(v, l, r)
-      @v, @l, @r = v, l, r
-    end
-  end
-
   it 'normal tree node' do
     t1 = Tree.new(20, nil, nil)
     t2 = Tree.new(21, nil, nil)
